@@ -12,21 +12,9 @@ class HomeScreen extends StatelessWidget {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          children: const [
-            Icon(
-              Icons.circle_sharp,
-              size: 12,
-              color: Colors.black,
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Text(
-              "Untitled UI",
-              style: TextStyle(color: Colors.black),
-            )
-          ],
+        title: const Text(
+          "T.G.L. Web Portfolio",
+          style: TextStyle(color: Colors.black),
         ),
         // foregroundColor: Colors.black,
         backgroundColor: Colors.white,
@@ -43,10 +31,13 @@ class HomeScreen extends StatelessWidget {
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                   colors: [
-                    kGradient1,
-                    kGradient2,
+                    /*kGradient1,
+                    kGradient2,*/
+                    ksquareColor2,
+                    ksquareColor,
                   ],
                 ),
+                //color: KsquareColor,
               ),
               child: Align(
                 alignment: Alignment.bottomCenter,
@@ -66,7 +57,7 @@ class HomeScreen extends StatelessWidget {
             )),
             Center(
                 child: Text(
-              "@$username",
+              "@$usernameItk",
               style: kSubTitleText,
             )),
             const SizedBox(
@@ -75,15 +66,27 @@ class HomeScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                OutlinedButton(
+                ElevatedButton(
                     onPressed: () async {
                       //Code to launch resume
                       final Uri _url = Uri.parse(resumeLink);
                       await launchUrl(_url);
                     },
-                    child: Text(
-                      "View Resume",
-                      style: kSubTitleText,
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.attach_file,
+                          size: 16,
+                          color: Colors.white,
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          "View Resume",
+                          style: kSubTitleText.copyWith(color: Colors.white),
+                        ),
+                      ],
                     )),
                 const SizedBox(
                   width: 10,
@@ -130,6 +133,12 @@ class HomeScreen extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
+                                Text("About Me", style: kSectionTitleText),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Text(aboutMeSummary),
+                                const Divider(),
                                 Text(
                                   "Experience",
                                   style: kSectionTitleText,
@@ -139,23 +148,25 @@ class HomeScreen extends StatelessWidget {
                                 ),
                                 Text(aboutWorkExperience),
                                 const Divider(),
-                                Text("About Me", style: kSectionTitleText),
+                                Text(
+                                  "Projects",
+                                  style: kSectionTitleText,
+                                ),
                                 const SizedBox(
                                   height: 10,
                                 ),
-                                Text(aboutMeSummary),
                               ],
                             ),
                           ),
-                          Flexible(
-                            flex: 1,
+                          Container(
+                            width: 350,
                             child: Column(
                               children: [
                                 Card(
                                   color: Colors.white,
                                   child: Padding(
                                     padding: const EdgeInsets.symmetric(
-                                        vertical: 20, horizontal: 40),
+                                        vertical: 20, horizontal: 20),
                                     child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
@@ -167,25 +178,14 @@ class HomeScreen extends StatelessWidget {
                                           const SizedBox(
                                             height: 10,
                                           ),
-                                          Row(
-                                            children: [
-                                              const Icon(
-                                                Icons.circle,
-                                                size: 16,
-                                              ),
-                                              const SizedBox(
-                                                width: 5,
-                                              ),
-                                              Text(
-                                                location,
-                                              )
-                                            ],
+                                          Text(
+                                            location,
                                           ),
                                           const SizedBox(
                                             height: 10,
                                           ),
                                           Text(
-                                            "Website",
+                                            "GitHub",
                                             style: kSubTitleText,
                                           ),
                                           const SizedBox(
@@ -193,36 +193,33 @@ class HomeScreen extends StatelessWidget {
                                           ),
                                           Row(
                                             children: [
-                                              Text(website),
-                                              const SizedBox(
-                                                width: 5,
+                                              Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  InkWell(
+                                                    child: Text(portfolio),
+                                                    onTap: () async {
+                                                      //Launch project on GitHub
+                                                      final Uri _url =
+                                                          Uri.parse(
+                                                        portfolio,
+                                                      );
+                                                      await launchUrl(_url);
+                                                    },
+                                                  ),
+                                                  InkWell(
+                                                      onTap: () async {
+                                                        //Launch project on GitHub
+                                                        final Uri _url =
+                                                            Uri.parse(
+                                                          portfolio2,
+                                                        );
+                                                        await launchUrl(_url);
+                                                      },
+                                                      child: Text(portfolio2)),
+                                                ],
                                               ),
-                                              const Icon(
-                                                Icons.launch,
-                                                size: 16,
-                                              )
-                                            ],
-                                          ),
-                                          const SizedBox(
-                                            height: 10,
-                                          ),
-                                          Text(
-                                            "Portfolio",
-                                            style: kSubTitleText,
-                                          ),
-                                          const SizedBox(
-                                            height: 10,
-                                          ),
-                                          Row(
-                                            children: [
-                                              Text(portfolio),
-                                              const SizedBox(
-                                                width: 5,
-                                              ),
-                                              const Icon(
-                                                Icons.launch,
-                                                size: 16,
-                                              )
                                             ],
                                           ),
                                           const SizedBox(
@@ -235,18 +232,7 @@ class HomeScreen extends StatelessWidget {
                                           const SizedBox(
                                             height: 10,
                                           ),
-                                          Row(
-                                            children: [
-                                              Text(email),
-                                              const SizedBox(
-                                                width: 5,
-                                              ),
-                                              const Icon(
-                                                Icons.launch,
-                                                size: 16,
-                                              )
-                                            ],
-                                          ),
+                                          Text(email),
                                           const SizedBox(
                                             height: 10,
                                           ),

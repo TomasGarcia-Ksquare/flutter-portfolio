@@ -6,19 +6,19 @@ Color kPrimaryColor = const Color(0xFF334055);
 Color kWhite = Colors.white;
 Color kBlack = Colors.black;
 
-TextStyle kTitleText = GoogleFonts.poppins(
+TextStyle kTitleText = const TextStyle(
   color: Colors.black,
   fontSize: 28.0,
   fontWeight: FontWeight.bold,
 );
 
-TextStyle kSubTitleText = GoogleFonts.montserrat(
+TextStyle kSubTitleText = TextStyle(
   color: kPrimaryColor,
   fontWeight: FontWeight.bold,
   fontSize: 12.0,
 );
 
-TextStyle kSectionTitleText = GoogleFonts.montserrat(
+TextStyle kSectionTitleText = TextStyle(
   color: kPrimaryColor,
   fontWeight: FontWeight.bold,
   fontSize: 18.0,
