@@ -16,7 +16,6 @@ class HomeScreen extends StatelessWidget {
           "T.G.L. Web Portfolio",
           style: TextStyle(color: Colors.black),
         ),
-        // foregroundColor: Colors.black,
         backgroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
@@ -31,13 +30,10 @@ class HomeScreen extends StatelessWidget {
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                   colors: [
-                    /*kGradient1,
-                    kGradient2,*/
                     ksquareColor2,
                     ksquareColor,
                   ],
                 ),
-                //color: KsquareColor,
               ),
               child: Align(
                 alignment: Alignment.bottomCenter,
@@ -68,7 +64,6 @@ class HomeScreen extends StatelessWidget {
               children: [
                 ElevatedButton(
                     onPressed: () async {
-                      //Code to launch resume
                       final Uri _url = Uri.parse(resumeLink);
                       await launchUrl(_url);
                     },
@@ -210,7 +205,6 @@ class HomeScreen extends StatelessWidget {
                                                   ),
                                                   InkWell(
                                                       onTap: () async {
-                                                        //Launch project on GitHub
                                                         final Uri _url =
                                                             Uri.parse(
                                                           portfolio2,

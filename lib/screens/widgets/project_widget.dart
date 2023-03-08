@@ -31,7 +31,7 @@ class ProjectWidget extends StatelessWidget {
                 ),
                 Text(
                   projectData.name,
-                  //style: kSectionTitleText,
+                  style: kSectionTitleText,
                 ),
               ],
             ),

@@ -26,7 +26,7 @@ Over the time, I have acquired skills in software development, and have successf
 ''';
 
 String aboutMeSummary = '''
-Hello! I'm Tomás García López, a Information Technology Management Engineer.
+Hello! I am Tomás García López, a Information Technology Management Engineer.
 
 In this web portfolio, you will find some examples of my previous work, which illustrate my experience and skills in mobile development with Flutter. I hope you find my work interesting and helpful, and if you are interested in working with me, please do not hesitate to get in touch!
 ''';
@@ -38,6 +38,28 @@ String portfolio2 = "https://github.com/PibiDev/";
 String email = "tommygl2112@gmail.com";
 
 List<Project> projectList = [
+  Project(
+    name: 'Synkron App',
+    description:
+        'This project is the app version for Synkron web from The Ksquare Group employee managing account.',
+    link: 'https://github.com/TomasGarcia-Ksquare/synkron-app',
+    tech: [
+      Tech(name: 'Flutter', image: 'images/flutter.png'),
+      Tech(name: 'Dart', image: 'images/dart.png'),
+      Tech(name: 'Provider Package'),
+    ],
+    docLink:
+        'https://screeching-allosaurus-195.notion.site/Synkron-Mobile-App-aee5d6dd44b740549f78884e3446720a',
+  ),
+  Project(
+    name: 'Web Portfolio',
+    description: 'Web portfolio using Flutter Web.',
+    link: 'https://github.com/TomasGarcia-Ksquare/flutter-portfolio',
+    tech: [
+      Tech(name: 'Flutter', image: 'images/flutter.png'),
+      Tech(name: 'Dart', image: 'images/dart.png'),
+    ],
+  ),
   Project(
     name: 'Listing TV Series App',
     description:
